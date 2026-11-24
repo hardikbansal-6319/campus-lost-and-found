@@ -20,6 +20,23 @@ Then open **http://127.0.0.1:8765** in your browser. Keep the terminal running w
 
 Open the address above rather than opening the HTML file directly: the Python server is needed for saving, searching, and matching.
 
+## Use the terminal version
+
+The terminal interface works without the `web/` files, which are not included in this checkout. From the project folder, run:
+
+```sh
+python3 lost_and_found.py
+```
+
+On Windows, use `py -3 lost_and_found.py`.
+
+Choose a numbered menu option to report a lost or found item, search items, view all records, or update an item's status using its record ID. Choose **6** to exit. Each successful report or status update is saved immediately to `lost_found_records.csv`, the same file used by the web server. Stop the web server before making changes through the terminal.
+
+- Item names and locations must contain at most **40 characters** each; descriptions must contain at most **100 characters**. These fields cannot be blank.
+- Select a category using its number in the displayed list.
+- Enter dates as **DD-MM-YYYY**, or press **Enter** to use today's date. Future dates are rejected.
+- When an item is returned, choose **Update Item Status**, enter its record ID, and select **Returned**. If both a lost report and a found report exist for that item, update each record separately.
+
 ## Features
 
 - Browse a noticeboard of lost, found, and returned items with record totals.
